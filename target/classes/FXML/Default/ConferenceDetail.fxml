@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" vgap="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1322.3333740234375" minWidth="10.0" prefWidth="634.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1106.3333129882812" minWidth="10.0" prefWidth="360.33331298828125" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1106.3333129882812" minWidth="10.0" prefWidth="570.6666870117188" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="277.6666564941406" minHeight="0.0" prefHeight="58.666664123535156" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="389.66668701171875" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="654.0000152587891" minHeight="10.0" prefHeight="412.33331298828125" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <Button fx:id="subscribeButton" mnemonicParsing="false" onAction="#subscribe" text="Đăng ký tham dự" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="conferenceImageView" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin></ImageView>
+      <Text fx:id="detailDescriptionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Phần mô tả chi tiết cho một hội nghị" wrappingWidth="593.0950012207031" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Text>
+      <Label fx:id="timeLabel" text="Thời gian : " wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="locationLabel" text="Địa điểm : " wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBackHomeScreen" text="Trở về">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="numOfParticipantsLabel" text="Số người tham dự : " wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="conferenceNameLabel" text="Tên hội nghị" wrapText="true" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Danh sách đã đăng kí" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="useDisplayName" text="Chưa đăng nhập" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <ListView fx:id="subscriberListView" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label fx:id="noSubscriberLabel" text="Chưa có người đăng ký tham dự" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</GridPane>

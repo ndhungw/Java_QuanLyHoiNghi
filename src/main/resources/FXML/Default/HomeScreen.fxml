@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="911.0" prefWidth="1600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="1000.0" prefWidth="1000.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="568.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="20.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" text="Đăng xuất" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <MenuButton fx:id="accountMenuButton" mnemonicParsing="false" text="Chưa đăng nhập" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+              <items>
+                  <MenuItem fx:id="registerMenuItem" mnemonicParsing="false" onAction="#register" text="Đăng kí" />
+                  <MenuItem fx:id="logInMenuItem" mnemonicParsing="false" onAction="#login" text="Đăng nhập" />
+                <MenuItem fx:id="profileMenuItem" mnemonicParsing="false" onAction="#goProfileScreen" text="Thông tin tài khoản" />
+                <MenuItem fx:id="logOutMenuItem" mnemonicParsing="false" onAction="#logout" text="Đăng xuất" />
+              </items>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </MenuButton>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <items>
+                    <ToggleButton fx:id="listViewToggleButton" onAction="#showList" selected="true" text="Danh sách">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="viewType" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                    </ToggleButton>
+                    <ToggleButton fx:id="cardViewToggleButton" onAction="#showCard" text="Card" toggleGroup="$viewType">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </ToggleButton>
+               </items>
+            </ToolBar>
+            <ListView fx:id="conferencesListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <GridPane fx:id="cardsGridPane" hgap="15.0" vgap="15.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
